@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="news">
+        <item>"新闻1"</item>
+        <item>"新闻2"</item>
+        <item>"新闻3"</item>
+        <item>"新闻4"</item>
+        <item>"新闻5"</item>
+        <item>"新闻6"</item>
+        <item>"新闻7"</item>
+        <item>"新闻8"</item>
+        <item>"新闻9"</item>
+        <item>"新闻10"</item>
+        <item>"新闻11"</item>
+        <item>"新闻12"</item>
+        <item>"新闻13"</item>
+        <item>"新闻14"</item>
+        <item>"新闻15"</item>
+        <item>"新闻16"</item>
+        <item>"新闻17"</item>
+        <item>"新闻18"</item>
+    </string-array>
+    <string-array name="myInformation">
+        <item>"我的信息"</item>
+        <item>"修改密码"</item>
+        <item>"浏览记录"</item>
+        <item>"修改信息"</item>
+        <item>"退出账号"</item>
+        <item>"注销账号"</item>
+        <item>"找回密码"</item>
+    </string-array>
+</resources>
