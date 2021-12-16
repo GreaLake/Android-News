@@ -1,6 +1,7 @@
 package com.example.androidnewsui.api;
 
 /**
+ *
  * @author FZN
  */
 public class Api {

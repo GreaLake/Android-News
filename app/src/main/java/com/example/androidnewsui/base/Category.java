@@ -1,14 +1,14 @@
 package com.example.androidnewsui.base;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
-
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
+/**
+ * @Description 从api获取类别信息的封装类
+ * @author FZN
+ */
 public class Category {
-
     @JsonProperty("statusCode")
     private Integer statusCode;
     @JsonProperty("info")

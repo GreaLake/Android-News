@@ -14,9 +14,20 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * @Description 根据获取类别信息
+ * @author FZN
+ */
 public class ListNewsByCategoryResult {
     final String TAG = "ListNewsByCategory";
 
+    /**
+     * 使用Retrofit框架获取body
+     * .getData()获取具体信息
+     * .getResult()获取类别信息,TYPE：List
+     *
+     * @param id 新闻类别
+     */
     public void get(String id) {
         new Retrofit.Builder()
                 .baseUrl(Api.getUrlId())
@@ -34,7 +45,7 @@ public class ListNewsByCategoryResult {
 
                     @Override
                     public void onFailure(Call<News> call, Throwable t) {
-
+                        Log.d(TAG, "onFailure: " + t);
                     }
                 });
     }

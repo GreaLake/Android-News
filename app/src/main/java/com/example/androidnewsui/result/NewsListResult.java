@@ -14,9 +14,18 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * @Description 获取所有新闻
+ * @author FZN
+ */
 public class NewsListResult {
     String TAG = "NewsListResult";
 
+    /**
+     * 使用Retrofit框架获取body
+     * .getData()获取具体信息
+     * .getResult()获取类别信息,TYPE：List
+     */
     public void get() {
         new Retrofit.Builder()
                 .baseUrl(Api.getUrlId())

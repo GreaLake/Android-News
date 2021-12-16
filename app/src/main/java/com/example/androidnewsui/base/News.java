@@ -6,6 +6,11 @@ import java.util.List;
 
 import lombok.NoArgsConstructor;
 
+
+/**
+ * @Description 从api获取新闻信息的封装类
+ * @author FZN
+ */
 @NoArgsConstructor
 public class News {
     @JsonProperty("statusCode")
