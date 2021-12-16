@@ -17,9 +17,22 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * @Description 获取登录信息
+ * @author FZN
+ */
 public class LoginResult {
     String TAG = "LoginResult";
 
+    /**
+     * 使用Retrofit框架获取body
+     * .getData()获取具体信息
+     * .getResult()获取类别信息,TYPE：Boolean
+     * .getToken()获取token,TYPE：String
+     *
+     * @param username 用户名
+     * @param password 用户密码
+     */
     public void post(String username, String password) {
         JSONObject jsonObject = new JSONObject();
         try {
@@ -49,7 +62,7 @@ public class LoginResult {
 
                     @Override
                     public void onFailure(Call<Login> call, Throwable t) {
-
+                        Log.d(TAG, "onFailure: " + t);
                     }
                 });
     }

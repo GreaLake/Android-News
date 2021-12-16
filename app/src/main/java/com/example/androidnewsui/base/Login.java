@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.NoArgsConstructor;
 
+/**
+ * @Description 从api获取登录信息的封装类
+ * @author FZN
+ */
 @NoArgsConstructor
 public class Login {
 

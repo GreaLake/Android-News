@@ -18,11 +18,20 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
+ * @Description 退出登录
  * @author FZN
  */
 public class RegisterResult {
     String TAG = "RegisterResult";
 
+    /**
+     * 使用Retrofit框架获取body
+     * .getData()获取具体信息
+     * .getResult()获取类别信息,TYPE：Boolean
+     *
+     * @param username 用户名
+     * @param password 用户密码
+     */
     public void put(String username, String password) {
         JSONObject jsonObject = new JSONObject();
         try {
@@ -50,7 +59,7 @@ public class RegisterResult {
 
                     @Override
                     public void onFailure(Call<SingleBool> call, Throwable t) {
-
+                        Log.d(TAG, "onFailure: " + t);
                     }
                 });
     }

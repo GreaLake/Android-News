@@ -2,7 +2,6 @@ package com.example.androidnewsui.service;
 
 
 import com.example.androidnewsui.base.Category;
-import com.example.androidnewsui.base.Comment;
 import com.example.androidnewsui.base.Login;
 import com.example.androidnewsui.base.News;
 import com.example.androidnewsui.base.SingleBool;
@@ -18,7 +17,7 @@ import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 /**
- * @author FZN
+ * @author FZN，LZH
  */
 public interface ApiService {
     /**
@@ -36,15 +35,6 @@ public interface ApiService {
      */
     @GET("/base/listNewsByCategory")
     Call<News> listNewsByCategory(@Query("categoryId") String categoryId);
-
-    /**
-     * 获取全部评论
-     * @param commentFather
-     * @param newsId
-     * @return
-     */
-    @GET("/base/listComment")
-    Call<Comment> listComment(@Query("commentFather") Integer commentFather, @Query("newsId") Integer newsId);
 
     /**
      * 登录
