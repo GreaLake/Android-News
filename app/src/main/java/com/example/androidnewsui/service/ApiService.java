@@ -5,13 +5,14 @@ import com.example.androidnewsui.base.Category;
 import com.example.androidnewsui.base.Comment;
 import com.example.androidnewsui.base.Login;
 import com.example.androidnewsui.base.News;
-import com.example.androidnewsui.base.RegisterAndLogout;
+import com.example.androidnewsui.base.SingleBool;
 import com.example.androidnewsui.base.User;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Query;
@@ -75,7 +76,7 @@ public interface ApiService {
      * @return
      */
     @PUT("/base/register")
-    Call<RegisterAndLogout> register(@Body RequestBody body);
+    Call<SingleBool> register(@Body RequestBody body);
 
     /**
      * 根据关键字查找用户
@@ -85,4 +86,29 @@ public interface ApiService {
     @GET("/base/userFind")
     Call<User> userFind(@Query("userKeyWord") String userKeyWord);
 
+    /**
+     * 退出登录
+     * @param token
+     * @return
+     */
+    @POST("/users/logout")
+    Call<SingleBool> logout(@Header("token") String token);
+
+    /**
+     * 更新用户信息
+     * @param token
+     * @param body
+     * @return
+     */
+    @POST("/users/updateInfo")
+    Call<SingleBool> updateInfo(@Header("token") String token,@Body RequestBody body);
+
+    /**
+     * 更新用户密码
+     * @param token
+     * @param body
+     * @return
+     */
+    @POST("/users/updatePassword")
+    Call<SingleBool> updatePassword(@Header("token") String token,@Body RequestBody body);
 }

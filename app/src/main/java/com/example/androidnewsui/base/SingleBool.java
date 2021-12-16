@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class RegisterAndLogout {
+public class SingleBool {
     @JsonProperty("statusCode")
     private Integer statusCode;
     @JsonProperty("info")

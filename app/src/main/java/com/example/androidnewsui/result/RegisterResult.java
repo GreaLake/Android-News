@@ -3,7 +3,7 @@ package com.example.androidnewsui.result;
 import android.util.Log;
 
 import com.example.androidnewsui.api.Api;
-import com.example.androidnewsui.base.RegisterAndLogout;
+import com.example.androidnewsui.base.SingleBool;
 import com.example.androidnewsui.service.ApiService;
 
 import org.json.JSONException;
@@ -38,10 +38,10 @@ public class RegisterResult {
                 .build()
                 .create(ApiService.class)
                 .register(RequestBody.create(jsonObject.toString(), MediaType.parse("application/json;charset=utf-8")))
-                .enqueue(new Callback<RegisterAndLogout>() {
+                .enqueue(new Callback<SingleBool>() {
                     @Override
-                    public void onResponse(Call<RegisterAndLogout> call, Response<RegisterAndLogout> response) {
-                        RegisterAndLogout body = response.body();
+                    public void onResponse(Call<SingleBool> call, Response<SingleBool> response) {
+                        SingleBool body = response.body();
                         Boolean result = body.getData().getResult();
                         Log.d(TAG, "onResponse: " + result);
 
@@ -49,7 +49,7 @@ public class RegisterResult {
                     }
 
                     @Override
-                    public void onFailure(Call<RegisterAndLogout> call, Throwable t) {
+                    public void onFailure(Call<SingleBool> call, Throwable t) {
 
                     }
                 });
