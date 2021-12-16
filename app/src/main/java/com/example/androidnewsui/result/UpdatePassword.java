@@ -18,16 +18,16 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * @author FZN
+ * @author LZH
  */
-public class RegisterResult {
-    String TAG = "RegisterResult";
+public class UpdatePassword {
+    String TAG = "UpdatePassword";
 
-    public void put(String username, String password) {
+    public void post(String token, String newPassword,String oldPassword) {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("username", username);
-            jsonObject.put("password", password);
+            jsonObject.put("newPassword", newPassword);
+            jsonObject.put("oldPassword", oldPassword);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -37,15 +37,14 @@ public class RegisterResult {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ApiService.class)
-                .register(RequestBody.create(jsonObject.toString(), MediaType.parse("application/json;charset=utf-8")))
+                .updatePassword(token, RequestBody.create(jsonObject.toString(), MediaType.parse("application/json;charset=utf-8")))
                 .enqueue(new Callback<SingleBool>() {
                     @Override
                     public void onResponse(Call<SingleBool> call, Response<SingleBool> response) {
                         SingleBool body = response.body();
                         Boolean result = body.getData().getResult();
-                        Log.d(TAG, "onResponse: " + result);
-
-
+                        Log.d(TAG, "onResponse: "+result);
+                        Log.d(TAG, "onResponse: "+body);
                     }
 
                     @Override
