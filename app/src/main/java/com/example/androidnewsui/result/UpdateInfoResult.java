@@ -18,11 +18,21 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
+ * @Description 更改用户信息
  * @author LZH
  */
 public class UpdateInfoResult {
     String TAG = "UpdateInfoResult";
 
+    /**
+     * 使用Retrofit框架获取body
+     * .getData()获取具体信息
+     * .getResult()获取类别信息,TYPE：Boolean
+     *
+     * @param token 内容
+     * @param content 内容
+     * @param icon 图标
+     */
     public void post(String token,String content,String icon) {
         JSONObject jsonObject = new JSONObject();
         try {

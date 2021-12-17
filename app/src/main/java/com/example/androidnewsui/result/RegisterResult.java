@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * @Description 退出登录
+ * @Description 注册
  * @author FZN
  */
 public class RegisterResult {
