@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,12 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.example.androidnewsui.R;
+import com.example.androidnewsui.api.Api;
+import com.example.androidnewsui.base.SingleBool;
+import com.example.androidnewsui.service.ApiService;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +27,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 public class NewsaroundActivity extends AppCompatActivity {
 //    private List<NewsData> mData = null;
 //    private Context mContext;
