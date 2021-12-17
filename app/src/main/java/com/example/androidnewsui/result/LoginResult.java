@@ -27,7 +27,7 @@ public class LoginResult {
     /**
      * 使用Retrofit框架获取body
      * .getData()获取具体信息
-     * .getResult()获取登录信息,TYPE：Boolean
+     * .getResult()获取是否登录信息,TYPE：Boolean
      * .getToken()获取token,TYPE：String
      *
      * @param username 用户名

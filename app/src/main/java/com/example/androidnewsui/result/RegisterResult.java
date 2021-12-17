@@ -27,7 +27,7 @@ public class RegisterResult {
     /**
      * 使用Retrofit框架获取body
      * .getData()获取具体信息
-     * .getResult()获取类别信息,TYPE：Boolean
+     * .getResult()获取是否注册成功信息,TYPE：Boolean
      *
      * @param username 用户名
      * @param password 用户密码

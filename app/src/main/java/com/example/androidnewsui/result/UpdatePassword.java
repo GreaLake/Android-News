@@ -27,7 +27,7 @@ public class UpdatePassword {
     /**
      * 使用Retrofit框架获取body
      * .getData()获取具体信息
-     * .getResult()获取类别信息,TYPE：Boolean
+     * .getResult()获取用户是否修改成功信息,TYPE：Boolean
      *
      * @param token 内容
      * @param newPassword 新密码

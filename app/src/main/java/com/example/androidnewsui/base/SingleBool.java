@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.NoArgsConstructor;
 
 /**
- * @Description 从api获取单个返回值的封装类
+ * @Description 从api获取单个布尔值的封装类
  * @author LZH
  */
 @NoArgsConstructor
