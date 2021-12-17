@@ -19,7 +19,7 @@ public class NewsCategoryActivity  extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_news_category);
-            initNews();
+            initNewsData();
             RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerview);
             //瀑布布局,spanCount为一行占几个
             StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(
@@ -31,7 +31,7 @@ public class NewsCategoryActivity  extends AppCompatActivity {
         }
 
     //初始化数据
-    private void initNews() {
+    private void initNewsData() {
         for (int i = 0; i < 2; i++) {
             NewsData news_1 = new NewsData(R.drawable.news_1,"新闻事件1");
             newsDataList.add(news_1);

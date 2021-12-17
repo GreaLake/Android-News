@@ -12,6 +12,11 @@
         <activity
             android:name=".activity.NewsCategoryActivity"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activity.SelfinformationActivity"
@@ -34,11 +39,6 @@
             android:exported="true" />
         <activity android:name=".activity.NewsContentActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
