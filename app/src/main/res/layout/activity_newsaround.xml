@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".NewsaroundActivity">
+    tools:context=".activity.NewsaroundActivity">
 
     <ListView
         android:id="@+id/list_test"

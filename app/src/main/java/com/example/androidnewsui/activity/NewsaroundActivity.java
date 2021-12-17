@@ -1,4 +1,4 @@
-package com.example.androidnewsui;
+package com.example.androidnewsui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.example.androidnewsui.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

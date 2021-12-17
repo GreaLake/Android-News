@@ -8,13 +8,18 @@
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_login.xml" value="0.24947916666666667" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_login2.xml" value="0.11197916666666667" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_main.xml" value="0.24583333333333332" />
+        <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_news_category.xml" value="0.16354166666666667" />
+        <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_news_content.xml" value="0.1" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_newsaroud.xml" value="0.24947916666666667" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_newsaround.xml" value="0.25" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_register.xml" value="0.24947916666666667" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_selfinformation.xml" value="0.24947916666666667" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/index.xml" value="0.176" />
-        <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/item_list.xml" value="0.21875" />
+        <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/item_list.xml" value="0.1" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/login.xml" value="0.2" />
+        <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/news_content_frag.xml" value="0.24114583333333334" />
+        <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/news_item.xml" value="0.24114583333333334" />
+        <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/news_title_frag.xml" value="0.24114583333333334" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/newsaround.xml" value="0.21510416666666668" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/register.xml" value="0.1" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/title_fragment.xml" value="0.536" />

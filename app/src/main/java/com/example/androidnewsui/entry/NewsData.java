@@ -1,4 +1,4 @@
-package com.example.androidnewsui;
+package com.example.androidnewsui.entry;
 
 public class NewsData {
     private int imgId;
