@@ -24,7 +24,7 @@ public class NewsFindResult {
     /**
      * 使用Retrofit框架获取body
      * .getData()获取具体信息
-     * .getResult()获取类别信息,TYPE：List
+     * .getResult()获取新闻信息,TYPE：List
      *
      * @param newsKeyWord 新闻关键词
      */
