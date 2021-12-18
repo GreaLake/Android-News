@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.NoArgsConstructor;
 
+/**
+ * @Description 从api获取单个布尔值的封装类
+ * @author LZH
+ */
 @NoArgsConstructor
 public class SingleBool {
     @JsonProperty("statusCode")

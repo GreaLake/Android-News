@@ -7,7 +7,8 @@ import java.util.List;
 import lombok.NoArgsConstructor;
 
 /**
- * @author FZN
+ * @Description 从api获取用户信息的封装类
+ * @author LZH
  */
 @NoArgsConstructor
 public class User {

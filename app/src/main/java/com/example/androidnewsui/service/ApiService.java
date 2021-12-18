@@ -78,7 +78,7 @@ public interface ApiService {
 
     /**
      * 退出登录
-     * @param token
+     * @param token 用户令牌
      * @return
      */
     @POST("/users/logout")
@@ -86,8 +86,8 @@ public interface ApiService {
 
     /**
      * 更新用户信息
-     * @param token
-     * @param body
+     * @param token 用户令牌
+     * @param body 请求体
      * @return
      */
     @POST("/users/updateInfo")
@@ -95,8 +95,8 @@ public interface ApiService {
 
     /**
      * 更新用户密码
-     * @param token
-     * @param body
+     * @param token 用户令牌
+     * @param body 请求体
      * @return
      */
     @POST("/users/updatePassword")
