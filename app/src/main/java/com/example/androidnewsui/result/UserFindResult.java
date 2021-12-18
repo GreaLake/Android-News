@@ -14,9 +14,20 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * @Description 搜索用户
+ * @author FZN
+ */
 public class UserFindResult {
-    String TAG = "NewsFindResult";
+    String TAG = "UserFindResult";
 
+    /**
+     * 使用Retrofit框架获取body
+     * .getData()获取具体信息
+     * .getResult()获取用户是否修改成功信息,TYPE：List
+     *
+     * @param userKeyWord 用户关键词
+     */
     public void get(String userKeyWord) {
         new Retrofit.Builder()
                 .baseUrl(Api.getUrlId())
