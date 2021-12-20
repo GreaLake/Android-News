@@ -7,7 +7,8 @@
         android:id="@+id/newsContentFrag"
         android:name="com.example.androidnewsui.fragment.NewsTitleFragment"
         android:layout_width="match_parent"
-        android:layout_height="631dp" />
+        android:layout_height="631dp" >
+    </fragment>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

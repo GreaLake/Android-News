@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidnewsui.entry.NewsData;
@@ -18,14 +17,14 @@ import java.util.List;
 public class NewsApapter extends RecyclerView.Adapter<NewsApapter.ViewHolder>{
     private List<NewsData> newsDataList;
 
-    //
+    // 构造器
     public NewsApapter(List<NewsData> newsDataList) {
         this.newsDataList = newsDataList;
     }
 
     //
     @Override
-    public NewsApapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NewsApapter.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
         ViewHolder holder = new ViewHolder(view);
         holder.newsCategoryView.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +48,7 @@ public class NewsApapter extends RecyclerView.Adapter<NewsApapter.ViewHolder>{
 
     // 为每个图片绑定数据
     @Override
-    public void onBindViewHolder(@NonNull NewsApapter.ViewHolder holder, int position) {
+    public void onBindViewHolder( NewsApapter.ViewHolder holder, int position) {
         NewsData newsData = newsDataList.get(position);
         holder.newsImage.setImageResource(newsData.getImgId());
         holder.newsTitle.setText(newsData.getContent());

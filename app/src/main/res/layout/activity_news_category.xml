@@ -6,45 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".activity.NewsCategoryActivity"
     android:orientation="vertical">
-    <LinearLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <Button
-            android:id="@+id/btn_worldNews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:backgroundTint="#3F51B5"
-            android:text="世界"/>
-        <Button
-            android:id="@+id/btn_ChinaNews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:backgroundTint="#3F51B5"
-            android:text="中国"/>
-        <Button
-            android:id="@+id/btn_ZheJiangNews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:backgroundTint="#3F51B5"
-            android:text="浙江"/>
-        <Button
-            android:id="@+id/btn_HangZhouNews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="#3F51B5"
-            android:text="杭州"/>
-    </LinearLayout>
+        android:layout_height="85dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="630dp" />
+        android:layout_height="533dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"

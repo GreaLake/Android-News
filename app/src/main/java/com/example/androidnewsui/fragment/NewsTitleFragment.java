@@ -25,7 +25,6 @@ public class NewsTitleFragment extends Fragment {
 
     private  boolean isTwoPane=false;
 
-
     //设置碎片
     @Nullable
     @Override
@@ -45,10 +44,12 @@ public class NewsTitleFragment extends Fragment {
         class ViewHolder extends RecyclerView.ViewHolder {
             View view;
             TextView newsTitle;
+            TextView newsCotent;
             public ViewHolder(View view){
                 super(view);
                 this.view=view;
                 newsTitle=view.findViewById(R.id.newsTitle);
+                newsCotent=view.findViewById(R.id.newsContent);
             }
         }
 
@@ -85,6 +86,7 @@ public class NewsTitleFragment extends Fragment {
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             New news=newsList.get(position);
             holder.newsTitle.setText(news.getTitle());
+            holder.newsCotent.setText(news.getContent());
         }
 
         @Override
@@ -108,19 +110,31 @@ public class NewsTitleFragment extends Fragment {
     //初始化数据
     public List<New> getNews(){
         ArrayList<New> newsList=new ArrayList<>();
-        for(int i=0;i<50;i++){
-            New news=new New("This is news title"+i,getRandomLengthString("This is news title"+i));
+
+        for(int i=0;i<10;i++){
+            New news=new New("This is news title"+i,getRandomLengthString(i));
             newsList.add(news);
         }
         return newsList;
 
     }
     //数据内容
-    public String getRandomLengthString(String str){
-        StringBuffer stringBuffer=new StringBuffer();
-        for (int i=0;i<10;i++){
-            stringBuffer.append(str);
-        }
-        return stringBuffer.toString();
+    public String getRandomLengthString(int j){
+//        StringBuffer stringBuffer=new StringBuffer();
+        String[] str = {"1.人民币对美元汇率中间价突破7.6比1。",
+        "2.霸王被疑致癌 涉三种龙头产品股价跌14%后停牌。",
+        "3.中国无脊髓灰质炎10年之后：脊灰灭活疫苗上路。",
+        "1、新疆启动富民安居工程，5年内改善70万户农牧民居住条件，打牢致富基础",
+        "2、温家宝在湖南考察；",
+        "3、第五世德珠活佛转世灵童金瓶掣签仪式圆满完成；",
+        "4、南方地区绝大多数损毁公路恢复通行；",
+        "5、福建围绕加快恢复灾区农业生产，迅速推进灾后重建；",
+        "6、南非世界杯四强全部产生；",
+        "1.国务院新闻办7月8日在北京召开的西部大开发10周年新闻发布会。"};
+//        for (int i =0;i<10;i++){
+//            stringBuffer.append(str[i]);
+//        }
+//        return stringBuffer.toString();
+        return str[j];
     }
 }

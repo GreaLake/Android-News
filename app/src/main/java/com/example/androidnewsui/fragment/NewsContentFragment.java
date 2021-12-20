@@ -21,6 +21,8 @@ public class NewsContentFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        newTitle=this.getActivity().findViewById(R.id.newTitle);
+        newContent=this.getActivity().findViewById(R.id.newContent);
         return inflater.inflate(R.layout.news_content_frag,container,false);
     }
 
