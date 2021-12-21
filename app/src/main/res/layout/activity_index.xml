@@ -25,6 +25,7 @@
             android:src="@drawable/search" />
 
         <ImageButton
+            android:id="@+id/personal"
             android:layout_width="28dp"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
@@ -38,58 +39,10 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsIndex"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:maxWidth="300dp"
-            android:maxHeight="200dp"
-            android:src="@drawable/indexnews" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:maxWidth="300dp"
-            android:maxHeight="200dp"
-            android:src="@drawable/indexnews_2" />
-
-    </LinearLayout>
-<!--    <RelativeLayout-->
-<!--        android:id="@+id/ly_top_bar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="48dp"-->
-<!--        android:layout_marginTop="150dp"-->
-<!--        android:background="#E6A23D">-->
-
-<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;            android:id="@+id/txt_topbar"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_centerInParent="true"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:backgroundTint="#E6A23D"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:gravity="center"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:text="信息"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:textColor=""&ndash;&gt;-->
-<!--&lt;!&ndash;            android:textSize="18sp" />&ndash;&gt;-->
-<!--&lt;!&ndash;        <View&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="2px"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:background="#1272BD"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_alignParentBottom="true"/>&ndash;&gt;-->
-
-<!--    </RelativeLayout>-->
+        android:layout_height="537dp" />
 
 
     <LinearLayout

@@ -9,6 +9,7 @@ import com.example.androidnewsui.result.ListCategoryResult;
 
 public class SelfinformationActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

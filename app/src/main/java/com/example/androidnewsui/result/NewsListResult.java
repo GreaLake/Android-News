@@ -38,6 +38,8 @@ public class NewsListResult {
                 News body = response.body();
                 List<News.DataDTO.ResultDTO> result = body.getData().getResult();
                 Log.d(TAG, "onResponse: " + result);
+
+
             }
 
             @Override
