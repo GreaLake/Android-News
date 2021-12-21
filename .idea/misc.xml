@@ -3,6 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_index.xml" value="0.176" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_login.xml" value="0.1265625" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_main.xml" value="0.1265625" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_news_category.xml" value="0.18885869565217392" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_news_content.xml" value="0.18885869565217392" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_newsaround.xml" value="0.17255434782608695" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_register.xml" value="0.18885869565217392" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_selfinformation.xml" value="0.17255434782608695" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/activity_sigel.xml" value="0.18885869565217392" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/categories_item.xml" value="0.1" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/item_list.xml" value="0.1265625" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/news_content_frag.xml" value="0.18885869565217392" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/news_item.xml" value="0.18885869565217392" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/title_fragment.xml" value="0.17255434782608695" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/view_footer.xml" value="0.1265625" />
+        <entry key="..\:/git-repository/Android-News-1/app/src/main/res/layout/view_header.xml" value="0.18885869565217392" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20462962962962963" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_index.xml" value="0.4" />
         <entry key="..\:/user/Androidprojects/AndroidNewsUI/app/src/main/res/layout/activity_login.xml" value="0.24947916666666667" />

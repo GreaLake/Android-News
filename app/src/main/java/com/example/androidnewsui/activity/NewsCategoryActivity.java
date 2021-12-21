@@ -1,8 +1,6 @@
 package com.example.androidnewsui.activity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,7 +11,7 @@ import com.example.androidnewsui.adapter.CategoryAdapter;
 import com.example.androidnewsui.entry.Category;
 import com.example.androidnewsui.entry.NewsData;
 import com.example.androidnewsui.R;
-import com.example.androidnewsui.adapter.NewsApapter;
+import com.example.androidnewsui.adapter.NewsAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +41,7 @@ public class NewsCategoryActivity  extends AppCompatActivity {
             categoryLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
             navigationView.setLayoutManager(categoryLayoutManager);
             //
-            NewsApapter newsAdapter = new NewsApapter(newsDataList);
+            NewsAdapter newsAdapter = new NewsAdapter(newsDataList);
             CategoryAdapter categoryAdapter = new CategoryAdapter(categoriesList);
             //
             recyclerView.setAdapter(newsAdapter);
@@ -67,20 +65,17 @@ public class NewsCategoryActivity  extends AppCompatActivity {
     }
     //初始话新闻类别数据
     private void initCategories() {
-        for (int i = 0; i < categoriesList.size(); i++) {
             Category c1 = new Category(1, "世界");
             categoriesList.add(c1);
             Category c2 = new Category(2, "中国");
-            categoriesList.add(c1);
+            categoriesList.add(c2);
             Category c3 = new Category(3, "浙江");
-            categoriesList.add(c1);
+            categoriesList.add(c3);
             Category c4 = new Category(4, "杭州");
-            categoriesList.add(c1);
+            categoriesList.add(c4);
             Category c5 = new Category(5, "富阳");
-            categoriesList.add(c1);
+            categoriesList.add(c5);
             Category c6 = new Category(6, "富春");
-            categoriesList.add(c1);
-        }
-
+            categoriesList.add(c6);
     }
 }

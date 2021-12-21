@@ -10,12 +10,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="85dp" />
+        android:layout_height="50dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="533dp" />
+        android:layout_height="505dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
