@@ -1,5 +1,7 @@
 package com.example.androidnewsui.adapter;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +14,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.androidnewsui.entry.NewsData;
 import com.example.androidnewsui.R;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
-public class NewsApapter extends RecyclerView.Adapter<NewsApapter.ViewHolder>{
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     private List<NewsData> newsDataList;
 
     // 构造器
-    public NewsApapter(List<NewsData> newsDataList) {
+    public NewsAdapter(List<NewsData> newsDataList) {
         this.newsDataList = newsDataList;
     }
 
     //
     @Override
-    public NewsApapter.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public NewsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
         ViewHolder holder = new ViewHolder(view);
         holder.newsCategoryView.setOnClickListener(new View.OnClickListener() {
@@ -48,11 +55,13 @@ public class NewsApapter extends RecyclerView.Adapter<NewsApapter.ViewHolder>{
 
     // 为每个图片绑定数据
     @Override
-    public void onBindViewHolder( NewsApapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(NewsAdapter.ViewHolder holder, int position) {
         NewsData newsData = newsDataList.get(position);
         holder.newsImage.setImageResource(newsData.getImgId());
+
         holder.newsTitle.setText(newsData.getContent());
     }
+
 
     // 统计新闻的条数
     @Override

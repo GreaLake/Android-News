@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 List<Category.DataDTO.ResultDTO> result = body.getData().getResult();
                 Log.d(TAG, result.toString());
                 System.out.println(result);
+                for (Category.DataDTO.ResultDTO r:result) {
+                    System.out.println(r.getId());
+                    System.out.println(r.getName());
+                }
             }
 
             @Override

@@ -1,8 +1,6 @@
 package com.example.androidnewsui.activity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,7 +11,7 @@ import com.example.androidnewsui.adapter.CategoryAdapter;
 import com.example.androidnewsui.entry.Category;
 import com.example.androidnewsui.entry.NewsData;
 import com.example.androidnewsui.R;
-import com.example.androidnewsui.adapter.NewsApapter;
+import com.example.androidnewsui.adapter.NewsAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +41,7 @@ public class NewsCategoryActivity  extends AppCompatActivity {
             categoryLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
             navigationView.setLayoutManager(categoryLayoutManager);
             //
-            NewsApapter newsAdapter = new NewsApapter(newsDataList);
+            NewsAdapter newsAdapter = new NewsAdapter(newsDataList);
             CategoryAdapter categoryAdapter = new CategoryAdapter(categoriesList);
             //
             recyclerView.setAdapter(newsAdapter);
