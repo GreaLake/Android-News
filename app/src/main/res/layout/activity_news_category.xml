@@ -7,6 +7,29 @@
     tools:context=".activity.NewsCategoryActivity"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="250sp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="10dp"
+            android:text="搜索一下，消息便知">
+
+        </EditText>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF"
+            android:src="@drawable/search" />
+
+
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
@@ -15,21 +38,106 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="505dp" />
+        android:layout_height="430dp" />
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/ly_tab_bar"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#D33F51B5"
-            android:gravity="center"
-            android:text="欢迎收看"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="75dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:layout_marginLeft="30dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:background="@drawable/news" />
+
+            <TextView
+                android:id="@+id/txt_message"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FBFBFB"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="新闻"
+                android:textColor="#B0787676"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:background="@drawable/mine" />
+
+            <TextView
+                android:id="@+id/txt_better"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#FBFBFB"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="我的"
+                android:textColor="#B0787676"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:background="@drawable/find" />
+
+            <TextView
+                android:id="@+id/txt_setting"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FBFBFB"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="发现"
+                android:textColor="#B0787676"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/ly_tab_bar"
+        android:background="@color/white" />
+    <FrameLayout
+        android:id="@+id/ly_content"
+        android:layout_width="match_parent"
+        android:layout_height="189dp"
+        android:layout_above="@id/div_tab_bar">
+
+    </FrameLayout>
+
 
 
 

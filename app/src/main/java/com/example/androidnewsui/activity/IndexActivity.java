@@ -28,6 +28,8 @@ public class IndexActivity extends AppCompatActivity {
     final String TAG = "IndexActivity";
 
     private List<NewsData> newsDataList = new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,7 @@ public class IndexActivity extends AppCompatActivity {
             NewsData news_5 = new NewsData(R.drawable.news_5,"新闻5");
             newsDataList.add(news_5);
         }
+
     }
 
     /**

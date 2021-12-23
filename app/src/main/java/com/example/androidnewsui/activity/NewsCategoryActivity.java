@@ -75,7 +75,11 @@ public class NewsCategoryActivity  extends AppCompatActivity {
             categoriesList.add(c4);
             Category c5 = new Category(5, "富阳");
             categoriesList.add(c5);
-            Category c6 = new Category(6, "富春");
+            Category c6 = new Category(6, "桐庐");
             categoriesList.add(c6);
+            Category c7 = new Category(7, "临安");
+            categoriesList.add(c7);
+            Category c8 = new Category(8, "余杭");
+            categoriesList.add(c7);
     }
 }
