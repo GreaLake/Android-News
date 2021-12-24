@@ -13,15 +13,18 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/search_news_text"
             android:layout_width="250sp"
             android:layout_height="match_parent"
             android:layout_marginStart="30sp"
             android:layout_marginEnd="10dp"
-            android:text="搜索一下，消息便知">
+            android:text=""
+            android:hint="搜索你要找的新闻">
 
         </EditText>
 
         <ImageButton
+            android:id="@+id/search_news_btn"
             android:layout_width="40dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"

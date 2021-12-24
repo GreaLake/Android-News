@@ -51,7 +51,7 @@ public interface ApiService {
      * @return
      */
     @GET("/base/newsFind")
-    Call<News> newsFind(@Query("newsKeyWord") int newsKeyWord);
+    Call<News> newsFind(@Query("newsKeyWord") String newsKeyWord);
 
     /**
      * 获取所有新闻

@@ -1,6 +1,12 @@
 package com.example.androidnewsui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,78 +14,174 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.androidnewsui.adapter.CategoryAdapter;
-import com.example.androidnewsui.entry.Category;
+import com.example.androidnewsui.api.Api;
+import com.example.androidnewsui.base.Category;
+import com.example.androidnewsui.base.News;
 import com.example.androidnewsui.entry.NewsData;
 import com.example.androidnewsui.R;
 import com.example.androidnewsui.adapter.NewsAdapter;
+import com.example.androidnewsui.service.ApiService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsCategoryActivity  extends AppCompatActivity {
-    //
-    private List<NewsData> newsDataList = new ArrayList<>();
-    private List<Category> categoriesList = new ArrayList<>();
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_news_category);
-            // 初始化数据
-            initCategories();
-            initNewsData();
-            // 绑定布局
-            RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerview);
-            RecyclerView navigationView = findViewById(R.id.navigation);
-            // 瀑布布局,spanCount为一行占几个
-            StaggeredGridLayoutManager newsLayoutManager = new StaggeredGridLayoutManager(
-                    2, StaggeredGridLayoutManager.VERTICAL
-            );
-            // 线性布局
-            LinearLayoutManager categoryLayoutManager = new LinearLayoutManager(this);
-            // 设置布局格式
-            recyclerView.setLayoutManager(newsLayoutManager);
-            categoryLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-            navigationView.setLayoutManager(categoryLayoutManager);
-            //
-            NewsAdapter newsAdapter = new NewsAdapter(newsDataList);
-            CategoryAdapter categoryAdapter = new CategoryAdapter(categoriesList);
-            //
-            recyclerView.setAdapter(newsAdapter);
-            navigationView.setAdapter(categoryAdapter);
-        }
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-    //初始化新闻数据
-    private void initNewsData() {
-        for (int i = 0; i < 2; i++) {
-            NewsData news_1 = new NewsData(R.drawable.news_1,"新闻事件1");
-            newsDataList.add(news_1);
-            NewsData news_2 = new NewsData(R.drawable.news_2,"新闻事件2");
-            newsDataList.add(news_2);
-            NewsData news_3 = new NewsData(R.drawable.news_3,"新闻事件3");
-            newsDataList.add(news_3);
-            NewsData news_4 = new NewsData(R.drawable.news_4,"新闻事件4");
-            newsDataList.add(news_4);
-            NewsData news_5 = new NewsData(R.drawable.news_5,"新闻事件5");
-            newsDataList.add(news_5);
+public class NewsCategoryActivity  extends BaseActivity {
+    //
+    private List<News.DataDTO.ResultDTO> newsDataList = null;
+
+    private List<Category.DataDTO.ResultDTO> categoriesList = null;
+
+    private ImageButton findNews = null;
+
+    private EditText searchText = null;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_news_category);
+        listCategory();
+        Intent intent = this.getIntent();
+        String message = intent.getStringExtra("message");
+        if (message == null){
+            listNews();
+        }else if (message.equals("listNewsByCategory")){
+            String id = intent.getStringExtra("id");
+            listNewsByCategory(id);
         }
+        searchText = findViewById(R.id.search_news_text);
+        findNews = findViewById(R.id.search_news_btn);
+        findNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String keyWord = searchText.getText().toString();
+                newsFind(keyWord);
+            }
+        });
     }
-    //初始话新闻类别数据
-    private void initCategories() {
-            Category c1 = new Category(1, "世界");
-            categoriesList.add(c1);
-            Category c2 = new Category(2, "中国");
-            categoriesList.add(c2);
-            Category c3 = new Category(3, "浙江");
-            categoriesList.add(c3);
-            Category c4 = new Category(4, "杭州");
-            categoriesList.add(c4);
-            Category c5 = new Category(5, "富阳");
-            categoriesList.add(c5);
-            Category c6 = new Category(6, "桐庐");
-            categoriesList.add(c6);
-            Category c7 = new Category(7, "临安");
-            categoriesList.add(c7);
-            Category c8 = new Category(8, "余杭");
-            categoriesList.add(c7);
+
+    private void loadCategory(){
+        RecyclerView navigationView = findViewById(R.id.navigation);
+        // 线性布局
+        LinearLayoutManager categoryLayoutManager = new LinearLayoutManager(this);
+        categoryLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        // 设置布局格式
+        navigationView.setLayoutManager(categoryLayoutManager);
+        CategoryAdapter categoryAdapter = new CategoryAdapter(categoriesList, NewsCategoryActivity.this);
+        navigationView.setAdapter(categoryAdapter);
+    }
+
+    private void loadNews(){
+        // 绑定布局
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerview);
+        // 瀑布布局,spanCount为一行占几个
+        StaggeredGridLayoutManager newsLayoutManager = new StaggeredGridLayoutManager(
+                2, StaggeredGridLayoutManager.VERTICAL
+        );
+        // 设置布局格式
+        recyclerView.setLayoutManager(newsLayoutManager);
+        NewsAdapter newsAdapter = new NewsAdapter(newsDataList,NewsCategoryActivity.this);
+        recyclerView.setAdapter(newsAdapter);
+    }
+
+    public void listNewsByCategory(String id) {
+        final String TAG = "ListNewsByCategory";
+        new Retrofit.Builder()
+                .baseUrl(Api.getUrlId())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(ApiService.class)
+                .listNewsByCategory(id)
+                .enqueue(new Callback<News>() {
+                    @Override
+                    public void onResponse(Call<News> call, Response<News> response) {
+                        News body = response.body();
+                        List<News.DataDTO.ResultDTO> result = body.getData().getResult();
+                        Log.d(TAG, "onResponse: " + result);
+                        newsDataList = result;
+                        loadNews();
+                    }
+
+                    @Override
+                    public void onFailure(Call<News> call, Throwable t) {
+                        Log.d(TAG, "onFailure: " + t);
+                    }
+                });
+    }
+
+    public void listCategory() {
+        String TAG = "ListCategoryResult";
+        new Retrofit.Builder()
+                .baseUrl(Api.getUrlId())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(ApiService.class)
+                .listCategory().enqueue(new Callback<com.example.androidnewsui.base.Category>() {
+            @Override
+            public void onResponse(Call<com.example.androidnewsui.base.Category> call, Response<com.example.androidnewsui.base.Category> response) {
+                com.example.androidnewsui.base.Category body = response.body();
+                Log.d(TAG, body.toString());
+                List<com.example.androidnewsui.base.Category.DataDTO.ResultDTO> result = body.getData().getResult();
+                Log.d(TAG, result.toString());
+                categoriesList = result;
+                loadCategory();
+            }
+            @Override
+            public void onFailure(Call<com.example.androidnewsui.base.Category> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t);
+            }
+        });
+    }
+
+    public void listNews() {
+        String TAG = "NewsListResult";
+        new Retrofit.Builder()
+                .baseUrl(Api.getUrlId())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(ApiService.class)
+                .newsList().enqueue(new Callback<News>() {
+            @Override
+            public void onResponse(Call<News> call, Response<News> response) {
+                News body = response.body();
+                List<News.DataDTO.ResultDTO> result = body.getData().getResult();
+                Log.d(TAG, "onResponse: " + result);
+                newsDataList = result;
+                loadNews();
+            }
+            @Override
+            public void onFailure(Call<News> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t);
+            }
+        });
+    }
+
+    public void newsFind(String newsKeyWord) {
+        String TAG = "NewsFindResult";
+        new Retrofit.Builder()
+                .baseUrl(Api.getUrlId())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(ApiService.class)
+                .newsFind(newsKeyWord)
+                .enqueue(new Callback<News>() {
+                    @Override
+                    public void onResponse(Call<News> call, Response<News> response) {
+                        News body = response.body();
+                        List<News.DataDTO.ResultDTO> result = body.getData().getResult();
+                        Log.d(TAG, "onResponse: " + result);
+                        newsDataList = result;
+                        loadNews();
+                    }
+                    @Override
+                    public void onFailure(Call<News> call, Throwable t) {
+                        Log.d(TAG, "onFailure: " + t);
+                    }
+                });
     }
 }
