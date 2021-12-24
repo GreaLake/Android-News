@@ -19,7 +19,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @author FZN
  */
 public class ListCategoryResult {
-    String TAG = "ListCategoryResult";
 
     /**
      * 使用Retrofit框架获取body
@@ -27,6 +26,7 @@ public class ListCategoryResult {
      * .getResult()获取类别信息,TYPE：List
      */
     public void get() {
+        String TAG = "ListCategoryResult";
         new Retrofit.Builder()
                 .baseUrl(Api.getUrlId())
                 .addConverterFactory(GsonConverterFactory.create())

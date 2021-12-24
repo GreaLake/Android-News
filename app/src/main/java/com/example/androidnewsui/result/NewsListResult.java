@@ -26,7 +26,7 @@ public class NewsListResult {
      * .getData()获取具体信息
      * .getResult()获取新闻信息,TYPE：List
      */
-    public void get() {
+    public void listNews() {
         new Retrofit.Builder()
                 .baseUrl(Api.getUrlId())
                 .addConverterFactory(GsonConverterFactory.create())
@@ -48,4 +48,5 @@ public class NewsListResult {
             }
         });
     }
+
 }

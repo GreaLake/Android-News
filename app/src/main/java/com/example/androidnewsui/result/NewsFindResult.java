@@ -19,7 +19,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @author FZN
  */
 public class NewsFindResult {
-    String TAG = "NewsFindResult";
 
     /**
      * 使用Retrofit框架获取body
@@ -28,7 +27,8 @@ public class NewsFindResult {
      *
      * @param newsKeyWord 新闻关键词
      */
-    public void get(int newsKeyWord) {
+    public void newsFind(String newsKeyWord) {
+        String TAG = "NewsFindResult";
         new Retrofit.Builder()
                 .baseUrl(Api.getUrlId())
                 .addConverterFactory(GsonConverterFactory.create())
